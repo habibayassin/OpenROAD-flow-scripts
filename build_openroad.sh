@@ -277,7 +277,7 @@ __docker_build()
                 cp .dockerignore{,.bak}
                 sed -i '/flow\/platforms/d' .dockerignore
         fi
-        docker pull "openroad/flow-runtime"
+        docker pull "openroad/flow-dev"
         ${NICE} docker build \
                 ${DOCKER_ARGS} \
                 --tag "${DOCKER_TAG}" \
@@ -292,7 +292,15 @@ __local_build()
 {
         if [[ "$OSTYPE" == "darwin"* ]]; then
           export PATH="$(brew --prefix bison)/bin:$(brew --prefix flex)/bin:$(brew --prefix tcl-tk)/bin:$PATH"
+          export CMAKE_PREFIX_PATH=$(brew --prefix or-tools)
         fi
+        if [[ -f "/opt/rh/devtoolset-8/enable" ]]; then
+            # the scl script has unbound variables
+            set +u
+            source /opt/rh/devtoolset-8/enable
+            set -u
+        fi
+
         echo "[INFO FLW-0017] Compiling Yosys."
         ${NICE} make install -C tools/yosys -j "${PROC}" ${YOSYS_ARGS}
 
