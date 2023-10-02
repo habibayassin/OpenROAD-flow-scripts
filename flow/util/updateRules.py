@@ -9,6 +9,7 @@ import os
 import requests
 from genRuleFile import genRuleFileFunc
 
+
 # make sure the working dir is flow/
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
