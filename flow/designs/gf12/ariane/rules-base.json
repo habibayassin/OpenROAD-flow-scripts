@@ -1,6 +1,6 @@
 {
     "synth__design__instance__area__stdcell": {
-        "value": 193105.1,
+        "value": 3321.53,
         "compare": "<="
     },
     "constraints__clocks__count": {
@@ -48,7 +48,7 @@
         "compare": "<="
     },
     "finish__timing__drv__hold_violation_count": {
-        "value": 2395,
+        "value": 101,
         "compare": "<="
     },
     "finish__timing__wns_percent_delay": {
