@@ -74,9 +74,6 @@ def gen_rule_file(design_dir, update, tighten, failing, variant, golden_metrics=
     platform = path_parts[-3]
     design = path_parts[-2]
 
-    if platform in ["intel22", "intel16", "gf12", "gf55", "tsmc65lp"]:
-        pass
-
     # dict format
     # 'metric_name': {
     #     'padding': <float>, percentage of padding to use

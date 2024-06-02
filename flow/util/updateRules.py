@@ -43,7 +43,7 @@ for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     design = dirList[2]
     test = '{} {}'.format(platform, design)
     dataFile = os.path.join(designsDir, runFilename)
-    if os.path.exists(dataFile) and (platform != 'sky130hd_fakestack' or platform != 'src'):
+    if os.path.exists(dataFile) and (platform != 'sky130hd_fakestack' or platform != 'src' or platform not in ["intel22", "intel16", "gf12", "gf55", "tsmc65lp"]):
         golden_metrics, error_golden_metrics = get_golden(platform, # platform
                                                         design, # design
                                                         api_base_url # backend url
