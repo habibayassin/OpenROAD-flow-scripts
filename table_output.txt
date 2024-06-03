@@ -1,0 +1,358 @@
+Platform: asap7     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  1943.72 |  1942.34 | Tighten  |
+| finish__timing__setup__ws                     |  -160.59 |  -125.43 | Tighten  |
+| finish__design__instance__area                |     2250 |     2244 | Tighten  |
+
+Platform: asap7     Design: aes-block
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| detailedroute__route__wirelength              |    82822 |    78617 | Tighten  |
+| finish__timing__setup__ws                     |  -338.86 |  -258.31 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      266 |      100 | Tighten  |
+
+Platform: asap7     Design: aes_lvt
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |  -155.52 |  -109.67 | Tighten  |
+| finish__timing__wns_percent_delay             |   -37.32 |   -29.57 | Tighten  |
+
+[WARNING] Multiple clocks not supported. Will use first clock: mrx_clk_pad_i: 500.0000.
+Platform: asap7     Design: ethmac
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |   -134.5 |   -58.16 | Tighten  |
+| finish__timing__wns_percent_delay             |   -17.37 |   -16.68 | Tighten  |
+
+[WARNING] Multiple clocks not supported. Will use first clock: mrx_clk_pad_i: 500.0000.
+Platform: asap7     Design: ethmac_lvt
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |  -106.81 |   -17.71 | Tighten  |
+| finish__timing__wns_percent_delay             |   -25.06 |    -10.0 | Tighten  |
+
+Platform: asap7     Design: gcd
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| cts__design__instance__count__setup_buffer    |       52 |       45 | Tighten  |
+
+Platform: asap7     Design: jpeg
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  7270.36 |  7211.47 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    72854 |    62323 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     5498 |     5419 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     5498 |     5419 | Tighten  |
+| detailedroute__route__wirelength              |   235232 |   190925 | Tighten  |
+| finish__timing__setup__ws                     |  -516.48 |  -391.85 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     2921 |     2710 | Tighten  |
+| finish__timing__wns_percent_delay             |   -36.16 |   -34.99 | Tighten  |
+
+Platform: asap7     Design: jpeg_lvt
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  7232.72 |  7228.06 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    75940 |    62352 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     5427 |     5422 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     5427 |     5422 | Tighten  |
+| detailedroute__route__wirelength              |   235594 |   187981 | Tighten  |
+| finish__timing__setup__ws                     |  -320.15 |  -239.92 | Tighten  |
+| finish__design__instance__area                |     8782 |     7722 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     3111 |     2711 | Tighten  |
+| finish__timing__wns_percent_delay             |    -30.6 |   -25.48 | Tighten  |
+
+Platform: asap7     Design: mock-alu
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |  -833.41 |  -703.96 | Tighten  |
+
+[WARNING] Multiple clocks not supported. Will use first clock: clock: 250.0000.
+Platform: asap7     Design: mock-array
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 18363.81 | 11269.58 | Tighten  |
+
+[WARNING] Multiple clocks not supported. Will use first clock: clk: 333.0000.
+Platform: asap7     Design: mock-cpu
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  7302.54 |  7302.52 | Tighten  |
+| finish__timing__setup__ws                     |   -50.82 |   -18.52 | Tighten  |
+
+Platform: asap7     Design: riscv32i
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |  -636.26 |  -269.91 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     1122 |     1015 | Tighten  |
+| finish__timing__wns_percent_delay             |   -25.14 |   -21.58 | Tighten  |
+
+API request failed
+failed to update rule for asap7 riscv32i-mock-sram
+API request failed
+failed to update rule for asap7 swerv_wrapper
+Platform: asap7     Design: uart
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |    79.83 |    78.69 | Tighten  |
+| placeopt__design__instance__area              |       87 |       86 | Tighten  |
+| placeopt__design__instance__count__stdcell    |      761 |      760 | Tighten  |
+| detailedroute__route__wirelength              |     1892 |     1580 | Tighten  |
+| finish__design__instance__area                |       92 |       90 | Tighten  |
+| finish__timing__drv__setup_violation_count    |       37 |       33 | Tighten  |
+
+Platform: gf180     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 874232.48 | 623705.25 | Tighten  |
+| placeopt__design__instance__area              |   903032 |   638590 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    33176 |    20555 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     2885 |     1787 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     2885 |     1787 | Tighten  |
+| detailedroute__route__wirelength              |  2112283 |  1360647 | Tighten  |
+| finish__design__instance__area                |   911892 |   640414 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     1442 |      894 | Tighten  |
+
+Platform: gf180     Design: aes-hybrid
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__area              |   512885 |   510901 | Tighten  |
+| finish__design__instance__area                |   491871 |   458773 | Tighten  |
+
+Platform: gf180     Design: jpeg
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 2415601.71 | 2410853.16 | Tighten  |
+| placeopt__design__instance__area              |  2492866 |  2474052 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    62850 |    58121 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     5465 |     5054 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     5465 |     5054 | Tighten  |
+| detailedroute__route__wirelength              |  2989154 |  2987709 | Tighten  |
+| finish__timing__setup__ws                     |    -1.22 |    -1.15 | Tighten  |
+| finish__design__instance__area                |  2560268 |  2487680 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     2733 |     2527 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      176 |      161 | Tighten  |
+| finish__timing__wns_percent_delay             |   -19.11 |    -18.9 | Tighten  |
+
+Platform: gf180     Design: riscv32i
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |    -3.72 |    -1.95 | Tighten  |
+| finish__timing__wns_percent_delay             |   -34.02 |   -28.49 | Tighten  |
+
+Platform: gf180     Design: uart-blocks
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__area              |    65850 |    65827 | Tighten  |
+| finish__design__instance__area                |    66226 |    66217 | Tighten  |
+
+Platform: ihp-sg13g2     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 251777.72 | 211827.23 | Tighten  |
+| placeopt__design__instance__area              |   241759 |   205048 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    22696 |    18774 | Tighten  |
+| detailedroute__route__wirelength              |  1282475 |   942020 | Tighten  |
+| finish__design__instance__area                |  1254868 |  1054743 | Tighten  |
+
+Platform: ihp-sg13g2     Design: gcd
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  6753.94 |  5812.68 | Tighten  |
+| placeopt__design__instance__area              |     7197 |     6508 | Tighten  |
+| placeopt__design__instance__count__stdcell    |      537 |      509 | Tighten  |
+| detailedroute__route__wirelength              |    13409 |    12860 | Tighten  |
+| finish__design__instance__area                |    28317 |    28231 | Tighten  |
+
+API request failed
+failed to update rule for ihp-sg13g2 jpeg
+Platform: ihp-sg13g2     Design: riscv32i
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__count__stdcell    |    11792 |    11461 | Tighten  |
+
+Platform: nangate45     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__count__stdcell    |    16030 |    16023 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     1394 |     1393 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     1394 |     1393 | Tighten  |
+| finish__timing__setup__ws                     |    -0.31 |    -0.23 | Tighten  |
+
+API request failed
+failed to update rule for nangate45 ariane133
+API request failed
+failed to update rule for nangate45 ariane136
+API request failed
+failed to update rule for nangate45 black_parrot
+API request failed
+failed to update rule for nangate45 bp_be_top
+API request failed
+failed to update rule for nangate45 bp_fe_top
+API request failed
+failed to update rule for nangate45 bp_multi_top
+Platform: nangate45     Design: dynamic_node
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 25671.13 | 25511.45 | Tighten  |
+| placeopt__design__instance__area              |    27353 |    27008 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    12696 |    12512 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     1104 |     1088 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     1104 |     1088 | Tighten  |
+| detailedroute__route__wirelength              |   230945 |   219137 | Tighten  |
+| finish__timing__drv__setup_violation_count    |      552 |      544 | Tighten  |
+
+Platform: nangate45     Design: gcd
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |   739.06 |    606.3 | Tighten  |
+| placeopt__design__instance__area              |      720 |      613 | Tighten  |
+| placeopt__design__instance__count__stdcell    |      684 |      491 | Tighten  |
+| detailedroute__route__wirelength              |     3980 |     3187 | Tighten  |
+| finish__design__instance__area                |      895 |      716 | Tighten  |
+| finish__timing__drv__setup_violation_count    |       46 |       45 | Tighten  |
+
+Platform: nangate45     Design: ibex
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__drv__hold_violation_count     |      242 |      100 | Tighten  |
+
+Platform: nangate45     Design: jpeg
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__count__stdcell    |    78892 |    64759 | Tighten  |
+| detailedroute__route__wirelength              |   738656 |   652738 | Tighten  |
+| finish__timing__setup__ws                     |    -0.35 |     -0.1 | Tighten  |
+| finish__timing__wns_percent_delay             |   -22.03 |   -11.14 | Tighten  |
+
+Platform: nangate45     Design: swerv
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 176767.07 | 176256.83 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    94699 |    94300 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     8235 |     8200 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     8235 |     8200 | Tighten  |
+| detailedroute__route__wirelength              |  2693259 |  2686066 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     4117 |     4100 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      395 |      100 | Tighten  |
+
+Platform: nangate45     Design: swerv_wrapper
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 735404.71 | 733552.18 | Tighten  |
+| placeopt__design__instance__area              |   771336 |   770463 | Tighten  |
+| placeopt__design__instance__count__stdcell    |   110338 |   108812 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     9595 |     9462 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     9595 |     9462 | Tighten  |
+| finish__timing__drv__setup_violation_count    |     4797 |     4731 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      419 |      234 | Tighten  |
+
+Platform: nangate45     Design: tinyRocket
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |    -0.14 |    -0.07 | Tighten  |
+
+Platform: sky130hd     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__area              |   130968 |   130701 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    20288 |    20286 | Tighten  |
+| detailedroute__route__wirelength              |   621045 |   606344 | Tighten  |
+| finish__timing__setup__ws                     |    -0.59 |    -0.26 | Tighten  |
+| finish__design__instance__area                |   139233 |   133742 | Tighten  |
+| finish__timing__wns_percent_delay             |   -10.61 |    -10.0 | Tighten  |
+
+Platform: sky130hd     Design: chameleon
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__drv__hold_violation_count     |      219 |      100 | Tighten  |
+
+API request failed
+failed to update rule for sky130hd chameleon_hier
+Platform: sky130hd     Design: gcd
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  3310.87 |  2919.49 | Tighten  |
+| placeopt__design__instance__area              |     3789 |     3286 | Tighten  |
+| placeopt__design__instance__count__stdcell    |      607 |      484 | Tighten  |
+| detailedroute__route__wirelength              |     8536 |     7670 | Tighten  |
+| finish__design__instance__area                |     3685 |     3528 | Tighten  |
+
+Platform: sky130hd     Design: ibex
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__design__instance__area                |   211488 |   204393 | Tighten  |
+
+Platform: sky130hd     Design: jpeg
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| detailedroute__route__wirelength              |  1553473 |  1433658 | Tighten  |
+
+[WARNING] Multiple clocks not supported. Will use first clock: ext_clk: 18.0000.
+Platform: sky130hd     Design: microwatt
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 733041.74 | 716360.8 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      295 |      142 | Tighten  |
+
+Platform: sky130hd     Design: riscv32i
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| finish__timing__setup__ws                     |    -0.59 |      0.0 | Tighten  |
+| finish__timing__wns_percent_delay             |   -11.47 |    -10.0 | Tighten  |
+
+Platform: sky130hs     Design: aes
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 173303.57 | 133906.28 | Tighten  |
+| placeopt__design__instance__area              |   242648 |   181433 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    21843 |    17196 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     1899 |     1495 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     1899 |     1495 | Tighten  |
+| detailedroute__route__wirelength              |   945274 |   627450 | Tighten  |
+| finish__timing__setup__ws                     |    -0.56 |    -0.21 | Tighten  |
+| finish__design__instance__area                |   243265 |   184759 | Tighten  |
+| finish__timing__drv__setup_violation_count    |      950 |      748 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      378 |      100 | Tighten  |
+| finish__timing__wns_percent_delay             |   -18.14 |   -10.39 | Tighten  |
+
+Platform: sky130hs     Design: gcd
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        |  4435.49 |  3784.78 | Tighten  |
+| placeopt__design__instance__area              |     5281 |     4086 | Tighten  |
+| placeopt__design__instance__count__stdcell    |      691 |      521 | Tighten  |
+| detailedroute__route__wirelength              |    10636 |     7561 | Tighten  |
+| finish__design__instance__area                |     5382 |     4242 | Tighten  |
+
+Platform: sky130hs     Design: ibex
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__area              |   267434 |   262659 | Tighten  |
+| placeopt__design__instance__count__stdcell    |    20257 |    19950 | Tighten  |
+| cts__design__instance__count__setup_buffer    |     1762 |     1735 | Tighten  |
+| cts__design__instance__count__hold_buffer     |     1762 |     1735 | Tighten  |
+| detailedroute__route__wirelength              |   877809 |   810996 | Tighten  |
+| finish__timing__setup__ws                     |    -0.54 |      0.0 | Tighten  |
+| finish__timing__drv__setup_violation_count    |      881 |      867 | Tighten  |
+| finish__timing__drv__hold_violation_count     |      121 |      100 | Tighten  |
+
+Platform: sky130hs     Design: jpeg
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| placeopt__design__instance__count__stdcell    |    86393 |    73562 | Tighten  |
+| detailedroute__route__wirelength              |  1985742 |  1733416 | Tighten  |
+
+Platform: sky130hs     Design: riscv32i
+| Metric                                        | Old      | New      | Type     |
+| ------                                        | ---      | ---      | ----     |
+| synth__design__instance__area__stdcell        | 98029.08 | 96843.46 | Tighten  |
+| placeopt__design__instance__area              |   119185 |   117389 | Tighten  |
+| placeopt__design__instance__count__stdcell    |     9797 |     9666 | Tighten  |
+| cts__design__instance__count__setup_buffer    |      852 |      840 | Tighten  |
+| cts__design__instance__count__hold_buffer     |      852 |      840 | Tighten  |
+| detailedroute__route__wirelength              |   402019 |   370970 | Tighten  |
+| finish__timing__setup__ws                     |    -0.45 |      0.0 | Tighten  |
+| finish__design__instance__area                |   123114 |   122411 | Tighten  |
+| finish__timing__drv__setup_violation_count    |      426 |      420 | Tighten  |
+
