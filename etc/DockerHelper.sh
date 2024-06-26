@@ -105,8 +105,7 @@ _push() {
         "dev" )
             ./etc/DockerHelper.sh create -os=${os} -ci -target=${target} \
                 2>&1 | tee build/create-${os}-${target}-${tag}.log
-            docker push ${imageName}:${commitSha}
-            docker push ${imageName}:${tag}
+            docker push ${imagePath}
             ;;
 
         "master" )
@@ -116,6 +115,8 @@ _push() {
             # Create builder image
             ./etc/DockerHelper.sh create -os=${os} -target=builder \
                 2>&1 | tee build/create-${os}-${target}-${tag}.log
+            docker push ${org}/flow-${os}-dev:${commitSha}
+            docker push ${org}/flow-${os}-dev:${commitSha} ${org}/flow-${os}-dev:latest
             docker push ${org}/flow-${os}-builder:${commitSha} ${org}/orfs:${commitSha}
             docker push ${org}/flow-${os}-builder:${commitSha} ${org}/orfs:${tag}
             ;;
