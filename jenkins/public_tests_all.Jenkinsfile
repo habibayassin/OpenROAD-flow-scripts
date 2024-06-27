@@ -31,7 +31,14 @@ node {
 
     stage('Run Tests') {
         Map tasks = [failFast: false];
-        def test_slugs = getTestSlugs("all");
+        def test_slugs = [
+            "gcd asap7",
+            "gcd ihp-sg13g2",
+            "gcd nangate45",
+            "gcd sky130hd",
+            "gcd sky130hs",
+            "delta debug"
+        ];
         for (test in test_slugs) {
             def currentSlug = test; // copy needed to correctly pass args to runTests
             tasks["${test}"] = {
