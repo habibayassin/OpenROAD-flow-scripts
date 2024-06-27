@@ -46,10 +46,8 @@ node {
 
     docker.image("${DOCKER_IMAGE}").inside('--user=root --privileged -v /var/run/docker.sock:/var/run/docker.sock') {
         sh "git config --system --add safe.directory '*'";
-        stage('Send Report Summary') {
+        stage('Report Summary') {
             generateReportShortSummary();
-            def COMMIT_AUTHOR_EMAIL = sh(script: "git --no-pager show -s --format='%ae'", returnStdout: true).trim();
-            sendEmail(env.BRANCH_NAME, COMMIT_AUTHOR_EMAIL, '${FILE, path="flow/reports/report-summary.log"}');
         }
         stage("Report HTML Table") {
             generateReportHtmlTable();
@@ -57,7 +55,8 @@ node {
         stage('Upload Metadata') {
             uploadMetadata(env.BRANCH_NAME, commitHash);
         }
-        stage('Send Report Summary') {
+        stage('Send Report') {
+            def COMMIT_AUTHOR_EMAIL = sh(script: "git --no-pager show -s --format='%ae'", returnStdout: true).trim();
             sendEmail(env.BRANCH_NAME, COMMIT_AUTHOR_EMAIL, '${FILE, path="flow/reports/report-summary.log"}');
         }
     }
