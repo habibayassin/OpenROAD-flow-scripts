@@ -2,7 +2,6 @@
 
 node {
 
-    def MAKE_ISSUE = 1;
     properties([
             copyArtifactPermission('${JOB_NAME},'+env.BRANCH_NAME),
     ]);
@@ -72,7 +71,7 @@ node {
     docker.image("${DOCKER_IMAGE}").inside('--user=root --privileged -v /var/run/docker.sock:/var/run/docker.sock') {
         sh "git config --system --add safe.directory '*'";
         stage('Get Report') {
-            copyArtifacts filter: "flow/reports/report-summary.log",
+            copyArtifacts filter: 'flow/reports/report-summary.log',
                           projectName: '${JOB_NAME}',
                           selector: specific('${BUILD_NUMBER}');
         }
