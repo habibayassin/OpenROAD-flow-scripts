@@ -69,12 +69,17 @@ node {
         }
     }
 
-    stage('Send Report') {
-        copyArtifacts filter: "flow/reports/report-summary.log",
-                      projectName: '${JOB_NAME}',
-                      selector: specific('${BUILD_NUMBER}');
-        def COMMIT_AUTHOR_EMAIL = sh(script: "git --no-pager show -s --format='%ae'", returnStdout: true).trim();
-        sendEmail(env.BRANCH_NAME, COMMIT_AUTHOR_EMAIL, '${FILE, path="flow/reports/report-summary.log"}');
+    docker.image("${DOCKER_IMAGE}").inside('--user=root --privileged -v /var/run/docker.sock:/var/run/docker.sock') {
+        sh "git config --system --add safe.directory '*'";
+        stage('Get Report') {
+            copyArtifacts filter: "flow/reports/report-summary.log",
+                          projectName: '${JOB_NAME}',
+                          selector: specific('${BUILD_NUMBER}');
+        }
+        stage('Send Report') {
+            def COMMIT_AUTHOR_EMAIL = sh(script: "git --no-pager show -s --format='%ae'", returnStdout: true).trim();
+            sendEmail(env.BRANCH_NAME, COMMIT_AUTHOR_EMAIL, '${FILE, path="flow/reports/report-summary.log"}');
+        }
     }
 
 }
