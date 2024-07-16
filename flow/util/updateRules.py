@@ -34,6 +34,15 @@ api_base_url = args.apiURL
 
 runFilename = f'rules-base.json'
 
+platform_list = []
+platforms_path = 'platforms'
+for item in os.listdir():
+    if item == 'sky130hd_fakestack':
+        continue
+    item_path = os.path.join(platforms_path, item)
+    if os.path.isdir(item_path):
+        platform_list.append(item)
+
 for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     dirList = designsDir.split(os.sep)
     if len(dirList) != 3:
@@ -43,12 +52,6 @@ for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     design = dirList[2]
     test = '{} {}'.format(platform, design)
     dataFile = os.path.join(designsDir, runFilename)
-    platform_list = []
-    platforms_path = 'platforms'
-    for item in os.listdir():
-      item_path = os.path.join(platforms_path, item)
-      if os.path.isdir(item_path):
-        platform_list.append(item)
     if os.path.exists(dataFile) and platform in platform_list:
         golden_metrics, error_golden_metrics = get_golden(platform, # platform
                                                         design, # design
