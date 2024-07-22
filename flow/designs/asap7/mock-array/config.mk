@@ -40,6 +40,16 @@ verilog:
 	export MOCK_ARRAY_COLS=$(word 2, $(MOCK_ARRAY_TABLE)) ; \
 	./designs/asap7/mock-array/verilog.sh
 
+.PHONY: simulate
+simulate:
+	export MOCK_ARRAY_ROWS=$(word 1, $(MOCK_ARRAY_TABLE)) ; \
+	export MOCK_ARRAY_COLS=$(word 2, $(MOCK_ARRAY_TABLE)) ; \
+	./designs/asap7/mock-array/simulate.sh
+
+.PHONY: power
+power:
+	$(OPENSTA_EXE) -no_init -exit designs/asap7/mock-array/power.tcl
+
 # If this design isn't quickly done in detailed routing, something is wrong.
 # At time of adding this option, only 12 iterations were needed for 0
 # violations.
@@ -59,3 +69,5 @@ export MACRO_HALO_X            = 0.5
 export MACRO_HALO_Y            = 0.5
 
 export CTS_BUF_DISTANCE = 60
+
+export ADDITIONAL_FILES = designs/src/mock-array/util.tcl

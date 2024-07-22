@@ -20,7 +20,7 @@ OPENROAD_APP_BRANCH="master"
 INSTALL_PATH="$(pwd)/tools/install"
 
 YOSYS_USER_ARGS=""
-YOSYS_ARGS="CONFIG=gcc"
+YOSYS_ARGS="CONFIG=clang"
 
 OPENROAD_APP_USER_ARGS=""
 OPENROAD_APP_ARGS=""
@@ -206,6 +206,8 @@ EOF
         fi
 fi
 
+echo "[INFO FLW-0028] Compiling with ${PROC} threads."
+
 # Only add install prefix variables after parsing arguments.
 YOSYS_ARGS+=" PREFIX=${INSTALL_PATH}/yosys"
 OPENROAD_APP_ARGS+=" -D CMAKE_INSTALL_PREFIX=${INSTALL_PATH}/OpenROAD"
@@ -271,6 +273,12 @@ __local_build()
             set +u
             source /opt/rh/devtoolset-8/enable
             set -u
+        fi
+
+        YOSYS_ABC_PATH=tools/yosys/abc
+        if [[ -d "${YOSYS_ABC_PATH}/.git" ]]; then
+            # update indexes to make sure git diff-index uses correct data
+            git --work-tree=${YOSYS_ABC_PATH} --git-dir=${YOSYS_ABC_PATH}/.git update-index --refresh
         fi
 
         echo "[INFO FLW-0017] Compiling Yosys."
