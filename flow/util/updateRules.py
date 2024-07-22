@@ -19,7 +19,6 @@ parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--keyFile', type=str, help='Service account credentials key file')
 parser.add_argument('--overwrite', action='store_true', default=False, help='Overwrite the golden metrics')
 parser.add_argument('--apiURL', type=str, default="http://localhost:80", help='Set API Base URL to get golden metrics')
-parser.add_argument('--commitSHA', type=str, default="", help='commit for the metrics used to update the rules')
 
 # Parse the arguments
 args = parser.parse_args()
@@ -54,17 +53,15 @@ for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     test = '{} {}'.format(platform, design)
     dataFile = os.path.join(designsDir, runFilename)
     if os.path.exists(dataFile) and platform in platform_list:
-        metrics, error_metrics = get_metrics(args.commitSHA # commit
-                            platform, # platform
-                            design, # design
-                            api_base_url # backend url
-                            )
-
-        if error_metrics:
+        golden_metrics, error_golden_metrics = get_golden(platform, # platform
+                                                        design, # design
+                                                        api_base_url # backend url
+                                                        )
+        if error_golden_metrics:
             print("failed to update rule for", platform, design)
             continue
         update_rules(designsDir, # design directory
                      "base", # variant
-                     metrics, # metrics needed for update, default is {} in case of file
+                     golden_metrics, # metrics needed for update, default is {} in case of file
                      args.overwrite # overwrite flag, default is false
                     )
