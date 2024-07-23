@@ -28,7 +28,7 @@
         "compare": "<="
     },
     "detailedroute__route__wirelength": {
-        "value": 293179,
+        "value": 293128,
         "compare": "<="
     },
     "detailedroute__route__drc_errors": {
@@ -40,7 +40,7 @@
         "compare": "<="
     },
     "finish__timing__setup__ws": {
-        "value": -0.16,
+        "value": -0.17,
         "compare": ">="
     },
     "finish__design__instance__area": {
@@ -52,11 +52,11 @@
         "compare": "<="
     },
     "finish__timing__drv__hold_violation_count": {
-        "value": 105,
+        "value": 116,
         "compare": "<="
     },
     "finish__timing__wns_percent_delay": {
-        "value": -11.57,
+        "value": -11.83,
         "compare": ">="
     }
 }

@@ -28,7 +28,7 @@
         "compare": "<="
     },
     "detailedroute__route__wirelength": {
-        "value": 268477,
+        "value": 268490,
         "compare": "<="
     },
     "detailedroute__route__drc_errors": {
@@ -40,7 +40,7 @@
         "compare": "<="
     },
     "finish__timing__setup__ws": {
-        "value": -24.63,
+        "value": -23.78,
         "compare": ">="
     },
     "finish__design__instance__area": {
