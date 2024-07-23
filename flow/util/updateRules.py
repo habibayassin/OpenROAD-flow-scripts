@@ -34,6 +34,14 @@ api_base_url = args.apiURL
 
 runFilename = f'rules-base.json'
 
+platform_list = []
+platforms_path = 'platforms'
+for item in os.listdir(platforms_path):
+    if item == 'sky130hd_fakestack':
+        continue
+    if os.path.isdir(os.path.join(platforms_path, item)):
+        platform_list.append(item)
+
 for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     dirList = designsDir.split(os.sep)
     if len(dirList) != 3:
@@ -43,7 +51,7 @@ for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
     design = dirList[2]
     test = '{} {}'.format(platform, design)
     dataFile = os.path.join(designsDir, runFilename)
-    if os.path.exists(dataFile) and (platform != 'sky130hd_fakestack' or platform != 'src'):
+    if os.path.exists(dataFile) and platform in platform_list:
         golden_metrics, error_golden_metrics = get_golden(platform, # platform
                                                         design, # design
                                                         api_base_url # backend url
@@ -52,7 +60,7 @@ for designsDir, dirs, files in sorted(os.walk('designs', topdown=False)):
             print("failed to update rule for", platform, design)
             continue
         update_rules(designsDir, # design directory
-                    "base", # variant
-                    golden_metrics, # metrics needed for update, default is {} in case of file
-                    args.overwrite # overwrite flag, default is false
+                     "base", # variant
+                     golden_metrics, # metrics needed for update, default is {} in case of file
+                     args.overwrite # overwrite flag, default is false
                     )
