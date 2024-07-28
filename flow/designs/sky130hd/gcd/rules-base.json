@@ -8,11 +8,11 @@
         "compare": "=="
     },
     "placeopt__design__instance__area": {
-        "value": 3789,
+        "value": 3764,
         "compare": "<="
     },
     "placeopt__design__instance__count__stdcell": {
-        "value": 607,
+        "value": 589,
         "compare": "<="
     },
     "detailedplace__design__violations": {
@@ -28,7 +28,7 @@
         "compare": "<="
     },
     "detailedroute__route__wirelength": {
-        "value": 8536,
+        "value": 8503,
         "compare": "<="
     },
     "detailedroute__route__drc_errors": {
