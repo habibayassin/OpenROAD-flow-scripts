@@ -71,12 +71,14 @@ _installUbuntuPackages() {
     export DEBIAN_FRONTEND="noninteractive"
     apt-get -y update
     apt-get -y install --no-install-recommends \
+        curl \
         libqt5multimediawidgets5 \
         libqt5svg5-dev \
         libqt5xmlpatterns5-dev \
         libqt5opengl5 \
         libz-dev \
         python3-pip \
+        python3-venv \
         qtmultimedia5-dev \
         qttools5-dev \
         ruby \
@@ -103,24 +105,6 @@ _installUbuntuPackages() {
         cd ${lastDir}
         rm -rf "${baseDir}"
     fi
-}
-
-_installDarwinPackages() {
-    brew install libffi tcl-tk ruby
-    brew install python libomp
-    brew link --force libomp
-    brew install --cask klayout
-}
-
-_installCI() {
-    apt-get -y update
-    apt-get -y install --no-install-recommends \
-        apt-transport-https \
-        ca-certificates \
-        coreutils \
-        curl \
-        python3 \
-        software-properties-common
 
     # Add Docker's official GPG key:
     install -m 0755 -d /etc/apt/keyrings
@@ -138,8 +122,26 @@ _installCI() {
         docker-ce \
         docker-ce-cli \
         containerd.io \
-        docker-buildx-plugin \
+        docker-buildx-plugin
+}
 
+_installDarwinPackages() {
+    brew install libffi tcl-tk ruby
+    brew install python libomp
+    brew link --force libomp
+    brew install --cask klayout
+    brew install docker docker-buildx
+}
+
+_installCI() {
+    apt-get -y update
+    apt-get -y install --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        coreutils \
+        curl \
+        python3 \
+        software-properties-common
 }
 
 _help() {
